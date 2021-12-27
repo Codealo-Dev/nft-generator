@@ -11,18 +11,22 @@ public class Ventana extends JFrame {
     private boolean ojos = false;
     private String cuerpo = "fondo.jpg";
     private boolean orejas = false;
+    private int LOCALIZACION = 0;
 
     public void setOjos(boolean ojos) {
         this.ojos = ojos;
     }
+
     public void setOrejas(boolean orejas) {
         this.orejas = orejas;
     }
+
     public Ventana() {
-        this.setSize(600, 600);//Estableci el tamaño de la ventana
+        this.setSize(500, 500);//Estableci el tamaño de la ventana
         setDefaultCloseOperation(EXIT_ON_CLOSE);//deja de run el proyecto al cerrar
         iniciarComponentes();//mando llamar el metodo
     }
+
     private void iniciarComponentes() {
         JLayeredPane panel = new JLayeredPane();//Creacion panel
         panel.setLayout(null);//desactivo configuracion de panel
@@ -44,34 +48,32 @@ public class Ventana extends JFrame {
         randomOjos();
         if (this.ojos == true) {
             panel.add(lentes);//añado a el panel
-        } else {}
+        } else {
+        }
         randomOrejas();
         if (this.orejas == true) {
             panel.add(orejas);
-        } else {}
+        } else {
+        }
         panel.add(fondo);//añado al panel 
-        
+
     }
 
     private void randomOjos() {
-        int random = (int) (Math.random() * 2);//Ojos
+        int random = (int) (Math.random() * 1.5);//Ojos
         if (random == 0) {
             this.ojos = true;
-        } else {}
-        System.out.println("random = " + random);
+        } else {
+        }
     }
+
     private void randomOrejas() {
         int random1 = (int) (Math.random() * 3);//Ojos
         if (random1 == 0) {
             this.orejas = true;
-        } else {}
-      
+        } else {
+        }
+
     }
-    
-    
-    
-    
-    
-    
-    
+
 }
